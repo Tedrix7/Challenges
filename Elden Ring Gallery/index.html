@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elden Ring Gallery</title>
+	<meta name="description" content="Some grid animation effects using anime.js" />
+	<meta name="keywords" content="grid, animation, effect, anime.js, elden ring, web design, javascript" />
+	<meta name="author" content="Atharva Shah" />
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" href="https://use.typekit.net/aku8mpq.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css" />
+</head>
+<body class="demo-1 loading">
+	<div class="hidden">
+	</div>
+	<main>
+		<div class="frame">
+			<div class="frame__title-wrap">
+				<h1 class="frame__title"><a href="">Design by Teodor Stamenov</a></h1>
+			</div>
+			<span class="frame__main">Elden Ring</span>
+		</div>
+		<div class="content">
+			<h2 class="content__title">Elden Ring</h2>
+		</div>
+		<div class="grid-wrap">
+			<div class="grid">
+
+			</div>
+		</div>
+		</div>
+	</main>
+	<div class="cursor">
+		<div class="cursor__inner cursor__inner--circle"></div>
+		<span class="cursor__inner cursor__inner--text">&nbsp;</span>
+	</div>
+	<script>
+		//get div with class hidden
+		let hidden = document.getElementsByClassName('hidden')[0];
+
+		let isClicked = false;
+
+		document.addEventListener('click', function () {
+			isClicked = !isClicked;
+			if (isClicked) {
+				let content = document.querySelector('.content');
+				content.style.backgroundColor = getRandomColor();
+			}
+		});
+
+		function getRandomColor() {
+			let hue = Math.floor(Math.random() * 360);
+			let saturation = 40;
+			let lightness = 50;
+
+			return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+		}
+
+
+		let CharacterNames = ["Abductor Virgin", "Adan, Thief of Fire", "Alabaster Lord", "Albinauric", "Alecto, Black Knife Ringleader", "Amy, Third Sister", "Anastasia, Tarnished-Eater", "Ancestor Spirit", "Ancient Dragon Knight Kristoff", "Ancient Dragon Lansseax", "Ancient Hero of Zamor", "Astel, Naturalborn of the Void", "Astrologer", "Aurelia, Spirit Jellyfish", "Bandit", "Banished Knight Engvall", "Banished Knight Oleg", "Battlemage Hugues", "Beastman of Farum Azula", "Bell Bearing Hunter", "Black Blade Kindred", "Black Knife Assassin Tiche", "Black Knife Assassin", "Blackguard Big Boggart", "Blaidd", "Bloodhound Knight Darriwill", "Bloodhound Knight Floh, the Rabid Stray", "Bloody Finger Hunter Yura", "Bloody Finger Nerijus", "Bloody Finger Okina", "Boc the Seamster", "Bols, Carian Knight", "Borealis, the Freezing Fog", "Brother Corhyn", "Castellan Edgar", "Cemetery Shade", "Cleanrot Knight", "Commander O’Neil", "Confessor", "Crucible Knight, Ordovis Companion", "Crucible Knight, Stormveil Rampart", "Crucible Knight", "Crystallian", "D, Beholder of Death", "D, Hunter of the Dead", "Deathbird", "Decaying Ekzykes", "Demi-Human Chief", "Dolores, the Sleeping Arrow", "Draconic Tree Sentinel", "Dragonkin Soldier of Nokstella", "Dragonkin Soldier", "Dragonlord Placidusax - Left Head", "Dragonlord Placidusax - Right Head", "Dung Eater", "Elemer of the Briar", "Eleonora, Violet Bloody Finger", "Ensha of the Royal Remains", "Erdtree Avatar", "Erdtree Burial Watchdog", "Esgar, Priest of Blood", "Fallen Knight Herbert", "Fallingstar Beast", "Fell Twin", "Festering Fingerprint Vyke", "Fia", "Fia’s Champion, High Page", "Fia’s Champion, Pumpkinhead Duelist", "Finger Reader Enia", "Finlay, Cleanrot Knight", "Fire Giant", "Flying Dragon Agheel", "General Radahn, Conqueror of the stars", "Giant Crab", "Giant Crayfish", "Gideon Ofnir", "Glintstone Dragon Smarag", "Godfrey, First Elden Lord", "Godrick the Grafted", "Godskin Noble II", "Godskin Noble", "Goldmask", "Grafted Scion", "Grave Warden Duelist", "Great Horned Tragoth", "Great Wyrm Theodorix", "Guardian Golem", "Gurranq, Beast Clergyman", "Helena, the Dragon Monarch", "Hero Class", "Inaba, Disciple of Okina", "Inquisitor Ghiza", "Irina", "Iron Fist Alexander", "Juno Hoslow, Knight of Blood", "Kenneth Haight", "Knight Bernahl", "Knight of the Great Jar II", "Knight of the Great Jar III", "Knight of the Great Jar", "Lady Tanith", "Lanya, House Hoslow Servant", "Lariko, the Blacksmith Desertor", "Latenna", "Leonard, General Radhan’s Steed", "Leonine Misbegotten", "Let Me Solo Her", "Lichdragon Fortissax", "Lightseeker Hyetta", "Lionel the Lionhearted", "Lobo, Latenna’s Wolf", "Loretta, Knight of the Haligtree", "Mad Pumpkin Head", "Mad Tongue Alberich", "Magma Wyrm Makar", "Maleigh Marais, Shaded Castle Castellan", "Malenia, Blade of Miquella", "Malenia, Goddess of Rot", "Maliketh, the Black Blade", "Margit, the Fell Omen", "Mary, Eldest Sister", "Maureen, Second Sister", "Melina", "Merchant Kalé", "Millicent", "Miranda, the Blighted Bloom", "Miriel, Pastor of Vows", "Mogh, Lord of Blood.", "Moongrum, Carian Knight", "Morgott, the Omen King", "Nameless Maiden, Chapel of Anticipation", "Nepheli Loux", "Night’s Cavalry", "Nox Swordstress", "Old Knight Istvan", "Omenkiller", "Patches the Untethered", "Polyanna, Adopted Daughter", "Preceptor Seluvis", "Primeval Sorcerer Azur", "Prisoner", "Prophet", "Radagon of the Golden Order", "Ranni the Witch", "Ravenmount Assassin, Bloody Finger", "Recusant Henricus", "Recusant Knight Bernahl", "Red Wolf of Radagon", "Redmane Knight Ogha", "Reformed Clergyman Follower, Bloody Finger", "Regal Ancestor Spirit", "Renalla, Queen of the Full Moon", "Roderika, Spirit Tuner", "Royal Revenant", "Runebear", "Rya", "Rykard, Lord of Blasphemy", "Samurai", "Scaly Misbegotten", "Smithing Master Hewg", "Soldier of Godrick", "Sorcerer Rogier", "Sorceress Sellen", "Stonedigger Troll", "Tarnished", "The Great Jar", "The Loathsome Dung Eater", "The Two Fingers", "Tibia Mariner", "Torrent, Spirit Steed", "Tree Sentinel", "Twin Maiden Husks", "Ulcerated Tree Spirit", "Vagabond", "War Counselor Iji", "Warrior Class", "White-faced Varré", "Witch-Hunter Jerren", "Wretch", "Zoraya"];
+
+		console.log(CharacterNames.length);
+
+		// add img tag child to div with class hidden
+		for (let i = 0; i < CharacterNames.length; i++) {
+			let img = document.createElement('img');
+			//let imageName = CharacterNames[i].replace(/ /g, '%20');
+			let imageName = encodeURI(CharacterNames[i])
+			img.src = 'img/large/' + imageName + '.jpg';
+			console.log(img.src);
+			hidden.appendChild(img);
+		}
+
+		// open the img/large folder and get the names of all the images
+		// and store them in an array
+
+
+
+		// Get the div with class "grid"
+		let grid = document.getElementsByClassName('grid')[0];
+
+		// Generate the grid items using a loop
+		for (let i = 0; i < CharacterNames.length; i++) {
+			// Create the grid item element
+			let gridItem = document.createElement('div');
+			gridItem.className = 'grid__item';
+			gridItem.setAttribute('data-title', CharacterNames[i]);
+
+			// Create the grid item inner element
+			let gridItemInner = document.createElement('div');
+			gridItemInner.className = 'grid__item-inner';
+			imageName = encodeURI(CharacterNames[i])
+			gridItemInner.style.backgroundImage = 'url(img/' + imageName + '.jpg)';
+			console.log(gridItemInner.style.backgroundImage);
+
+			// Append the grid item inner element to the grid item element
+			gridItem.appendChild(gridItemInner);
+
+			// Append the grid item element to the grid container
+			grid.appendChild(gridItem);
+		}
+
+
+	</script>
+	<script src="js/imagesloaded.pkgd.min.js"></script>
+	<script src="js/anime.min.js"></script>
+	<script src="js/demo1.js"></script>
+</body>
+</html>
