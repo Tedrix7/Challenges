@@ -1,4 +1,4 @@
-# Interactive Grid UI with Custom Cursor (ELDEN RING)
+# Interactive Grid UI with custom cursor (ELDEN RING)
 
 This project implements an interactive grid-based UI with a custom mouse cursor and smooth animations. 
 It uses JavaScript, CSS, and libraries like Anime.js and imagesLoaded to create a visually appealing and responsive experience. 
